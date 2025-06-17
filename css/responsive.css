@@ -1,0 +1,318 @@
+/* Медиазапросы для адаптивного дизайна */
+
+/* Общие стили для всех устройств */
+* {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Мобильные устройства (до 767px) */
+@media (max-width: 767px) {
+    /* Шапка */
+    .header__inner {
+        padding: 15px 0;
+        flex-wrap: wrap;
+    }
+    
+    .logo {
+        order: 1;
+        width: 120px;
+    }
+    
+    .header__contacts {
+        order: 2;
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+    }
+    
+    .header__phone {
+        font-size: 0;
+        width: 24px;
+        height: 24px;
+        background: url('../img/icons/phone.svg') no-repeat center;
+    }
+    
+    .callback-btn {
+        display: none;
+    }
+    
+    .burger {
+        order: 3;
+        display: block;
+        margin-left: 15px;
+    }
+    
+    .nav {
+        order: 4;
+        width: 100%;
+        margin-top: 15px;
+        display: none;
+    }
+    
+    .nav.active {
+        display: block;
+    }
+    
+    .nav__list {
+        flex-direction: column;
+    }
+    
+    .nav__item {
+        margin: 0 0 10px 0;
+    }
+    
+    /* Герой-секция */
+    .hero {
+        padding: 30px 0;
+    }
+    
+    .hero__content {
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+    
+    .hero__title {
+        font-size: 24px;
+        line-height: 1.3;
+    }
+    
+    .hero__buttons {
+        flex-direction: column;
+    }
+    
+    .hero__buttons .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    /* Преимущества */
+    .advantages__grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    /* Каталог */
+    .catalog-controls__inner {
+        flex-direction: column;
+    }
+    
+    .filter-toggle {
+        margin-bottom: 15px;
+        width: 100%;
+    }
+    
+    .sorting {
+        width: 100%;
+    }
+    
+    .catalog-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .catalog-filters {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 90%;
+        height: 100vh;
+        z-index: 1000;
+        background: #fff;
+        padding: 20px;
+        overflow-y: auto;
+        transition: left 0.3s ease;
+    }
+    
+    .catalog-filters.active {
+        left: 0;
+    }
+    
+    .catalog-filters__close {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 24px;
+        background: none;
+        border: none;
+    }
+    
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    
+    .footer__grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .footer__col {
+        text-align: center;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+    
+    .footer__bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    /* Модальные окна */
+    .modal__content {
+        width: 95%;
+        padding: 20px;
+    }
+}
+
+/* Планшеты (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    /* Шапка */
+    .header__inner {
+        padding: 20px 0;
+    }
+    
+    .header__phone {
+        font-size: 14px;
+    }
+    
+    .callback-btn {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+    
+    /* Герой-секция */
+    .hero {
+        padding: 40px 0;
+    }
+    
+    .hero__title {
+        font-size: 32px;
+    }
+    
+    /* Преимущества */
+    .advantages__grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    /* Каталог */
+    .catalog-grid {
+        grid-template-columns: 250px 1fr;
+    }
+    
+    .products-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    
+    .footer__grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Ноутбуки (1024px - 1279px) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+    /* Шапка */
+    .nav__list {
+        gap: 15px;
+    }
+    
+    /* Герой-секция */
+    .hero__title {
+        font-size: 36px;
+    }
+    
+    /* Каталог */
+    .products-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+/* Большие экраны (1280px и больше) */
+@media (min-width: 1280px) {
+    .container {
+        max-width: 1200px;
+    }
+    
+    /* Герой-секция */
+    .hero {
+        padding: 80px 0;
+    }
+    
+    .hero__title {
+        font-size: 42px;
+    }
+    
+    /* Каталог */
+    .products-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Особые стили для ландшафтной ориентации на мобильных */
+@media (max-width: 767px) and (orientation: landscape) {
+    .hero__content {
+        margin-bottom: 20px;
+    }
+    
+    .hero__buttons {
+        flex-direction: row;
+    }
+    
+    .hero__buttons .btn {
+        width: auto;
+        margin-bottom: 0;
+        margin-right: 10px;
+    }
+}
+
+/* Адаптация для сверхмалых экранов */
+@media (max-width: 374px) {
+    .hero__title {
+        font-size: 20px;
+    }
+    
+    .hero__text {
+        font-size: 14px;
+    }
+    
+    .btn {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+    
+    .product-card__actions .btn {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+}
+
+/* Адаптация высоты для элементов */
+@media (max-height: 600px) {
+    .modal__content {
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+}
+
+/* Печать */
+@media print {
+    .header, .footer, .callback-btn, .burger {
+        display: none !important;
+    }
+    
+    body {
+        padding: 20px;
+        font-size: 12pt;
+    }
+    
+    .product-card {
+        page-break-inside: avoid;
+    }
+}

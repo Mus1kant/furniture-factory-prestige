@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог мебели | Мебельная фабрика "Престиж"</title>
+    <meta name="description" content="Каталог корпусной мебели на заказ от производителя. Кухни, шкафы-купе, гостиные и другая мебель.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/catalog.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- (аналог index.html) -->
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <a href="/" class="logo">
+                    <img src="images/logo.jpg" alt="Мебельная фабрика Престиж" width="180" height="60">
+                </a>
+                
+                <nav class="nav">
+                    <button class="nav__close" aria-label="Закрыть меню">×</button>
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="index.html" class="nav__link">Главная</a></li>
+                        <li class="nav__item"><a href="catalog.html" class="nav__link active">Каталог</a></li>
+                        <li class="nav__item"><a href="about.html" class="nav__link">О компании</a></li>
+                        <li class="nav__item"><a href="contacts.html" class="nav__link">Контакты</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header__contacts">
+                    <a href="tel:+78001234567" class="header__phone">8 800 123-45-67</a>
+                    <button class="btn btn--small callback-btn">Заказать звонок</button>
+                </div>
+                
+                <button class="burger" aria-label="Открыть меню">
+                    <span class="burger__line"></span>
+                    <span class="burger__line"></span>
+                    <span class="burger__line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    
+    <main class="catalog-page">
+       
+        <div class="breadcrumbs">
+            <div class="container">
+                <ul class="breadcrumbs__list">
+                    <li class="breadcrumbs__item"><a href="index.html">Главная</a></li>
+                    <li class="breadcrumbs__item">Каталог</li>
+                </ul>
+            </div>
+        </div>
+
+        
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-header__title">Каталог мебели</h1>
+                <p class="page-header__text">Более 500 моделей корпусной мебели на заказ по индивидуальным размерам</p>
+            </div>
+        </section>
+
+        <!-- Фильтры и сортировка -->
+        <section class="catalog-controls">
+            <div class="container">
+                <div class="catalog-controls__inner">
+                    <button class="btn btn--outline filter-toggle">Фильтры</button>
+                    
+                    <div class="sorting">
+                        <label for="sort-by">Сортировка:</label>
+                        <select id="sort-by" class="sorting__select">
+                            <option value="popular">По популярности</option>
+                            <option value="price-asc">По возрастанию цены</option>
+                            <option value="price-desc">По убыванию цены</option>
+                            <option value="newest">Сначала новые</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Основной контент каталога -->
+        <section class="catalog-content">
+            <div class="container">
+                <div class="catalog-grid">
+                    <!-- Боковая панель с фильтрами -->
+                    <aside class="catalog-filters">
+                        <div class="catalog-filters__inner">
+                            <button class="catalog-filters__close">×</button>
+                            
+                            <div class="filter-group">
+                                <h3 class="filter-group__title">Категории</h3>
+                                <ul class="filter-list">
+                                    <li class="filter-item"><a href="#kitchens" class="filter-link active">Кухни</a></li>
+                                    <li class="filter-item"><a href="#wardrobes" class="filter-link">Шкафы-купе</a></li>
+                                    <li class="filter-item"><a href="#living-rooms" class="filter-link">Гостиные</a></li>
+                                    <li class="filter-item"><a href="#bedrooms" class="filter-link">Спальни</a></li>
+                                    <li class="filter-item"><a href="#children" class="filter-link">Детские</a></li>
+                                    <li class="filter-item"><a href="#offices" class="filter-link">Офисная мебель</a></li>
+                                </ul>
+                            </div>
+                            
+                            <div class="filter-group">
+                                <h3 class="filter-group__title">Цена, руб.</h3>
+                                <div class="price-range">
+                                    <div class="price-range__inputs">
+                                        <input type="number" id="min-price" class="price-input" placeholder="от" min="0" value="10000">
+                                        <span>-</span>
+                                        <input type="number" id="max-price" class="price-input" placeholder="до" min="0" value="150000">
+                                    </div>
+                                    <div class="price-range__slider">
+                                        <div class="price-slider"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="filter-group">
+                                <h3 class="filter-group__title">Материал</h3>
+                                <ul class="filter-list">
+                                    <li class="filter-item">
+                                        <input type="checkbox" id="material-ldsp" class="filter-checkbox" checked>
+                                        <label for="material-ldsp">ЛДСП</label>
+                                    </li>
+                                    <li class="filter-item">
+                                        <input type="checkbox" id="material-mdf" class="filter-checkbox" checked>
+                                        <label for="material-mdf">МДФ</label>
+                                    </li>
+                                    <li class="filter-item">
+                                        <input type="checkbox" id="material-wood" class="filter-checkbox">
+                                        <label for="material-wood">Массив дерева</label>
+                                    </li>
+                                    <li class="filter-item">
+                                        <input type="checkbox" id="material-glass" class="filter-checkbox">
+                                        <label for="material-glass">Стекло</label>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="filter-group">
+                                <h3 class="filter-group__title">Цвет</h3>
+                                <div class="color-filters">
+                                    <button class="color-filter white active" aria-label="Белый"></button>
+                                    <button class="color-filter gray" aria-label="Серый"></button>
+                                    <button class="color-filter black" aria-label="Черный"></button>
+                                    <button class="color-filter wood" aria-label="Дерево"></button>
+                                    <button class="color-filter blue" aria-label="Синий"></button>
+                                    <button class="color-filter green" aria-label="Зеленый"></button>
+                                </div>
+                            </div>
+                            
+                            <div class="filter-actions">
+                                <button class="btn btn--primary apply-filters">Применить</button>
+                                <button class="btn btn--outline reset-filters">Сбросить</button>
+                            </div>
+                        </div>
+                    </aside>
+                    
+                    <!-- Сетка товаров -->
+                    <div class="catalog-products">
+                        <div class="products-grid">
+                            <!-- Карточка товара 1 -->
+                            <article class="product-card">
+                                <div class="product-card__badge">Хит</div>
+                                <a href="product.html" class="product-card__image">
+                                    <img src="images/kitchen_milan.jpg" alt="Кухня 'Милан'" width="400" height="300" loading="lazy">
+                                </a>
+                                <div class="product-card__content">
+                                    <h3 class="product-card__title">
+                                        <a href="product.html">Кухня "Милан"</a>
+                                    </h3>
+                                    <div class="product-card__meta">
+                                        <span class="product-card__material">МДФ + пластик</span>
+                                        <span class="product-card__size">от 2.5 м</span>
+                                    </div>
+                                    <div class="product-card__price">
+                                        <span class="current-price">89 900 ₽</span>
+                                        <span class="old-price">112 400 ₽</span>
+                                    </div>
+                                    <div class="product-card__actions">
+                                        <button class="btn btn--primary">Заказать</button>
+                                        <button class="btn btn--outline">Подробнее</button>
+                                    </div>
+                                </div>
+                            </article>
+                            
+                            <!-- Карточка товара 2 -->
+                            <article class="product-card">
+                                <div class="product-card__badge new">Новинка</div>
+                                <a href="product.html" class="product-card__image">
+                                    <img src="images/wardrobe_harmony.jpg" alt="Шкаф-купе 'Гармония'" width="400" height="300" loading="lazy">
+                                </a>
+                                <div class="product-card__content">
+                                    <h3 class="product-card__title">
+                                        <a href="product.html">Шкаф-купе "Гармония"</a>
+                                    </h3>
+                                    <div class="product-card__meta">
+                                        <span class="product-card__material">ЛДСП + зеркало</span>
+                                        <span class="product-card__size">от 1.8 м</span>
+                                    </div>
+                                    <div class="product-card__price">
+                                        <span class="current-price">45 200 ₽</span>
+                                    </div>
+                                    <div class="product-card__actions">
+                                        <button class="btn btn--primary">Заказать</button>
+                                        <button class="btn btn--outline">Подробнее</button>
+                                    </div>
+                                </div>
+                            </article>
+                            
+                            <!-- Карточка товара 3 -->
+                            <article class="product-card">
+                                <a href="product.html" class="product-card__image">
+                                    <img src="images/living_room.jpg" alt="Гостиная 'Престиж'" width="400" height="300" loading="lazy">
+                                </a>
+                                <div class="product-card__content">
+                                    <h3 class="product-card__title">
+                                        <a href="product.html">Гостиная "Престиж"</a>
+                                    </h3>
+                                    <div class="product-card__meta">
+                                        <span class="product-card__material">Массив дуба</span>
+                                        <span class="product-card__size">от 3.2 м</span>
+                                    </div>
+                                    <div class="product-card__price">
+                                        <span class="current-price">145 700 ₽</span>
+                                    </div>
+                                    <div class="product-card__actions">
+                                        <button class="btn btn--primary">Заказать</button>
+                                        <button class="btn btn--outline">Подробнее</button>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        
+                        
+                        <div class="pagination">
+                            <a href="#" class="pagination__prev disabled">← Назад</a>
+                            <a href="#" class="pagination__page active">1</a>
+                            <a href="#" class="pagination__page">2</a>
+                            <a href="#" class="pagination__page">3</a>
+                            <span class="pagination__dots">...</span>
+                            <a href="#" class="pagination__page">8</a>
+                            <a href="#" class="pagination__next">Вперед →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Блок преимуществ -->
+        <section class="catalog-benefits">
+            <div class="container">
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <img src="images/quality.jpg" alt="Качество" class="benefit-card__icon" width="60" height="60">
+                        <h3 class="benefit-card__title">Качество материалов</h3>
+                        <p class="benefit-card__text">Используем только проверенные материалы от ведущих производителей</p>
+                    </div>
+                    <div class="benefit-card">
+                        <img src="images/5years.jpg" alt="Гарантия" class="benefit-card__icon" width="60" height="60">
+                        <h3 class="benefit-card__title">5 лет гарантии</h3>
+                        <p class="benefit-card__text">Даем расширенную гарантию на всю нашу продукцию</p>
+                    </div>
+                    <div class="benefit-card">
+                        <img src="images/ind_diz.jpg" alt="Дизайн" class="benefit-card__icon" width="60" height="60">
+                        <h3 class="benefit-card__title">Индивидуальный дизайн</h3>
+                        <p class="benefit-card__text">Разработаем уникальный дизайн специально для вас</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- (аналог index.html) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__col">
+                    <a href="/" class="footer-logo">
+                        <img src="images/logo.jpg" alt="Мебельная фабрика Престиж" width="50" height="180">
+                    </a>
+                    <p class="footer__text">Производство и продажа качественной корпусной мебели с 2010 года.</p>
+                </div>
+                
+                <div class="footer__col">
+                    <h3 class="footer__title">Меню</h3>
+                    <ul class="footer__menu">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="about.html">О компании</a></li>
+                        <li><a href="portfolio.html">Портфолио</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__col">
+                    <h3 class="footer__title">Контакты</h3>
+                    <address class="footer__contacts">
+                        <p>г. Москва, ул. Мебельная, 15</p>
+                        <p><a href="tel:+78001234567">8 800 123-45-67</a></p>
+                        <p><a href="mailto:info@prestige-mebel.ru">info@prestige-mebel.ru</a></p>
+                    </address>
+                </div>
+                
+                <div class="footer__col">
+                    <h3 class="footer__title">Мы в соцсетях</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="ВКонтакте"><img src="images/VK.jpg" alt="VK" width="32" height="32"></a>
+                        <a href="#" class="social-link" aria-label="Instagram"><img src="images/insta.jpg" alt="Instagram" width="32" height="32"></a>
+                        <a href="#" class="social-link" aria-label="WhatsApp"><img src="images/whatsapp.png" alt="WhatsApp" width="32" height="32"></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p class="footer__copyright">© 2023 Мебельная фабрика "Престиж". Все права защищены.</p>
+                <a href="privacy.html" class="footer__link">Политика конфиденциальности</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальное окно заказа -->
+    <div class="modal" id="order-modal">
+        <div class="modal__content">
+            <button class="modal__close" aria-label="Закрыть">×</button>
+            <h2 class="modal__title">Заказать мебель</h2>
+            <form class="order-form">
+                <input type="hidden" id="product-name" value="">
+                <input type="hidden" id="product-price" value="">
+                
+                <div class="form-group">
+                    <label for="order-name">Ваше имя *</label>
+                    <input type="text" id="order-name" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="order-phone">Телефон *</label>
+                    <input type="tel" id="order-phone" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="order-size">Размеры (ширина × высота × глубина, см)</label>
+                    <input type="text" id="order-size" class="form-control" placeholder="Например: 250 × 220 × 60">
+                </div>
+                
+                <div class="form-group">
+                    <label for="order-comment">Комментарий</label>
+                    <textarea id="order-comment" class="form-control" rows="3"></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn--primary">Отправить заказ</button>
+                
+                <div class="form-agreement">
+                    Нажимая кнопку, вы соглашаетесь с <a href="privacy.html">политикой обработки данных</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

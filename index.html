@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мебельная фабрика "Престиж" - корпусная мебель на заказ</title>
+    <meta name="description" content="Производство и продажа качественной корпусной мебели по индивидуальным размерам">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <a href="/" class="logo">
+                    <img src="images/logo.jpg" alt="Мебельная фабрика Престиж" width="180" height="10">
+                </a>
+                
+                <nav class="nav">
+                    <button class="nav__close" aria-label="Закрыть меню">×</button>
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="/" class="nav__link active">Главная</a></li>
+                        <li class="nav__item"><a href="catalog.html" class="nav__link">Каталог</a></li>
+                        <li class="nav__item"><a href="about.html" class="nav__link">О компании</a></li>
+                        <li class="nav__item"><a href="contacts.html" class="nav__link">Контакты</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header__contacts">
+                    <a href="tel:+78001234567" class="header__phone">8 800 123-45-67</a>
+                    <button class="btn btn--small callback-btn">Заказать звонок</button>
+                </div>
+                
+                <button class="burger" aria-label="Открыть меню">
+                    <span class="burger__line"></span>
+                    <span class="burger__line"></span>
+                    <span class="burger__line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    
+    <main>
+        
+        <section class="hero">
+            <div class="container">
+                <div class="hero__content">
+                    <h1 class="hero__title">Эксклюзивная корпусная мебель на заказ в Москве</h1>
+                    <p class="hero__text">Изготовление мебели по индивидуальным размерам с гарантией 5 лет. Более 1000 успешных проектов.</p>
+                    <div class="hero__buttons">
+                        <a href="catalog.html" class="btn btn--primary">Посмотреть каталог</a>
+                        <a href="#calculator" class="btn btn--secondary">Рассчитать стоимость</a>
+                    </div>
+                </div>
+                <div class="hero__image">
+                    <img src="images/example.jpg" alt="Пример нашей мебели" width="600" height="400" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="advantages">
+            <div class="container">
+                <h2 class="section-title">Почему выбирают нас</h2>
+                <div class="advantages__grid">
+                    <div class="advantage-card">
+                        <div class="advantage-card__icon">10+</div>
+                        <h3 class="advantage-card__title">Лет на рынке</h3>
+                        <p class="advantage-card__text">Опыт работы с 2010 года</p>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="advantage-card__icon">5</div>
+                        <h3 class="advantage-card__title">Лет гарантии</h3>
+                        <p class="advantage-card__text">На всю нашу продукцию</p>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="advantage-card__icon">1000+</div>
+                        <h3 class="advantage-card__title">Проектов</h3>
+                        <p class="advantage-card__text">Успешно реализовано</p>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="advantage-card__icon">14</div>
+                        <h3 class="advantage-card__title">Дней</h3>
+                        <p class="advantage-card__text">Средний срок изготовления</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="categories">
+            <div class="container">
+                <h2 class="section-title">Популярные категории</h2>
+                <div class="categories__grid">
+                    <a href="catalog.html#kitchens" class="category-card">
+                        <img src="images/kitchen_milan.jpg" alt="Кухни" class="category-card__image" width="400" height="300" loading="lazy">
+                        <h3 class="category-card__title">Кухни</h3>
+                    </a>
+                    <a href="catalog.html#wardrobes" class="category-card">
+                        <img src="images/wardrobe_harmony.jpg" alt="Шкафы-купе" class="category-card__image" width="400" height="300" loading="lazy">
+                        <h3 class="category-card__title">Шкафы-купе</h3>
+                    </a>
+                    <a href="catalog.html#living-rooms" class="category-card">
+                        <img src="images/living_room.jpg" alt="Гостиные" class="category-card__image" width="400" height="300" loading="lazy">
+                        <h3 class="category-card__title">Гостиные</h3>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="calculator" id="calculator">
+            <div class="container">
+                <h2 class="section-title">Рассчитайте стоимость вашей мебели</h2>
+                <form class="calculator-form">
+                    <div class="form-group">
+                        <label for="product-type">Тип изделия</label>
+                        <select id="product-type" class="form-control">
+                            <option value="kitchen">Кухня</option>
+                            <option value="wardrobe">Шкаф-купе</option>
+                            <option value="living-room">Гостиная</option>
+                            <option value="other">Другое</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="material">Материал</label>
+                        <select id="material" class="form-control">
+                            <option value="ldsp">ЛДСП</option>
+                            <option value="mdf">МДФ</option>
+                            <option value="wood">Массив дерева</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="size">Размер (м²)</label>
+                        <input type="number" id="size" class="form-control" min="1" max="50" value="5">
+                    </div>
+                    
+                    <button type="submit" class="btn btn--primary">Рассчитать</button>
+                    
+                    <div class="calculator-result">
+                        <p>Примерная стоимость: <span id="result">0</span> руб.</p>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        
+        <section class="reviews">
+            <div class="container">
+                <h2 class="section-title">Отзывы наших клиентов</h2>
+                <div class="reviews-slider">
+                    <div class="review-card">
+                        <div class="review-card__header">
+                            <img src="images/alexandra.jpg" alt="Александра" class="review-card__avatar" width="80" height="80" loading="lazy">
+                            <div class="review-card__info">
+                                <h3 class="review-card__name">Александра</h3>
+                                <div class="review-card__rating">★★★★★</div>
+                            </div>
+                        </div>
+                        <p class="review-card__text">Заказывали кухню в этой компании. Остались очень довольны! Качество материалов на высоте, сборка аккуратная, все сроки соблюдены. Особенно понравился индивидуальный подход к проектированию.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__col">
+                    <a href="/" class="footer-logo">
+                        <img src="images/logo.jpg" alt="Мебельная фабрика Престиж" width="120" height="60">
+                    </a>
+                    <p class="footer__text">Производство и продажа качественной корпусной мебели с 2010 года.</p>
+                </div>
+                
+                <div class="footer__col">
+                    <h3 class="footer__title">Меню</h3>
+                    <ul class="footer__menu">
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="about.html">О компании</a></li>
+                        <li><a href="portfolio.html">Портфолио</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__col">
+                    <h3 class="footer__title">Контакты</h3>
+                    <address class="footer__contacts">
+                        <p>г. Москва, ул. Мебельная, 15</p>
+                        <p><a href="tel:+78001234567">8 800 123-45-67</a></p>
+                        <p><a href="mailto:info@prestige-mebel.ru">info@prestige-mebel.ru</a></p>
+                    </address>
+                </div>
+                
+                <div class="footer__col">
+                    <h3 class="footer__title">Мы в соцсетях</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="ВКонтакте"><img src="images/VK.jpg" alt="VK" width="32" height="32"></a>
+                        <a href="#" class="social-link" aria-label="Instagram"><img src="images/insta.jpg" alt="Instagram" width="32" height="32"></a>
+                        <a href="#" class="social-link" aria-label="WhatsApp"><img src="images/whatsapp.png" alt="WhatsApp" width="32" height="32"></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p class="footer__copyright">© 2023 Мебельная фабрика "Престиж". Все права защищены.</p>
+                <a href="privacy.html" class="footer__link">Политика конфиденциальности</a>
+            </div>
+        </div>
+    </footer>
+
+    
+    <div class="modal" id="callback-modal">
+        <div class="modal__content">
+            <button class="modal__close" aria-label="Закрыть">×</button>
+            <h2 class="modal__title">Заказать звонок</h2>
+            <form class="callback-form">
+                <div class="form-group">
+                    <label for="name">Ваше имя</label>
+                    <input type="text" id="name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Телефон</label>
+                    <input type="tel" id="phone" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn--primary">Заказать звонок</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/calculator.js"></script>
+</body>
+</html>
